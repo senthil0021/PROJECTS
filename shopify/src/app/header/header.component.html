@@ -1,0 +1,13 @@
+<nav>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search" (click)="onSearch()">
+  </div>
+  <div class="app-name">Shopify</div>
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li *ngIf="!isAuthenticated"><a routerLink="/login">Login</a></li>
+    <li *ngIf="!isAuthenticated"><a routerLink="/signup">Signup</a></li>
+    <li *ngIf="isAuthenticated"><a routerLink="/profile">Profile</a></li>
+    <li *ngIf="isAuthenticated"><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>

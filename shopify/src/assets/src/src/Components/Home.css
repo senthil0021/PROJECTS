@@ -1,0 +1,11 @@
+.outer-cont{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.inner-cont{
+    background-color: aliceblue;
+    padding: 30px;
+    
+}
