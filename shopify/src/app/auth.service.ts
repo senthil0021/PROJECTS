@@ -59,7 +59,6 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/forgot-password`, data);
   }
 
-  // Optional: Remove if not needed or make consistent with apiUrl
   private productsApiUrl = 'https://fakestoreapi.com/products';
   getProducts(): Observable<any[]> {
     return this.http.get<any[]>(this.productsApiUrl);

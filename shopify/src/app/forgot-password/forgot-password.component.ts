@@ -43,8 +43,7 @@ export class ForgotPasswordComponent {
       ).subscribe(response => {
         if (response) {
           this.snackBar.open('Password reset link sent', 'Close', { duration: 3000 });
-          // Navigate to reset password page
-          // You can modify this part if the actual URL requires parameters
+       
           this.router.navigate(['/reset-password']);
         }
       });
