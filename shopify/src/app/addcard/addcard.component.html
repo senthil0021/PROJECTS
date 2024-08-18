@@ -1,0 +1,36 @@
+<div class="hero">
+  <div class="hero-image">
+    <a href="/payment">
+      <img [src]="productImage" alt="Product Image">
+    </a>
+  </div>
+  <div class="hero-content">
+    <h2>Product: {{productName}}</h2>
+    <h5>Price: ${{productPrice}}</h5>
+    <h5>Complete Your Purchase</h5>
+
+    <!-- Quantity control -->
+    <div class="quantity-control">
+      <button (click)="decrement()">-</button>
+      <span>{{quantity}}</span>
+      <button (click)="increment()">+</button>
+    </div>
+
+    <!-- Display discount and total -->
+    <div class="discount-info" *ngIf="discount > 0">
+      <h5>Discount Applied: ${{discount}}</h5>
+      <p class="discount-message">Congratulations! You've saved ${{discount}} on your purchase. Enjoy your shopping!</p>
+    </div>
+    <h5>Total: ${{totalPrice}}</h5>
+
+    <div class="payment">
+      <a href="/payment">
+        <button class="cta-btn">Buy Now</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Your Company. All rights reserved.</p>
+</footer>

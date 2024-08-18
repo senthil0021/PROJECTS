@@ -1,0 +1,45 @@
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Shopify</h1>
+      <p>Your ultimate destination for amazing products.</p>
+      <a routerLink="/products" class="button">Explore Products</a>
+    </div>
+  </section>
+
+  <section class="featured-products">
+    <div class="container">
+      <h1><b>Deals on Fashion</b></h1>
+      <div class="product-list">
+        <div *ngFor="let product of products | slice:15:20" class="product-card">
+          <h3>{{ product.title }}</h3>
+          <div class="product">
+            <a routerLink="/products" (click)="onSearch()">
+              <img [src]="product.image" [alt]="product.name">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1><b>Deals on Electronics</b></h1>
+      <div class="product-list">
+        <div *ngFor="let product of products | slice:9:14" class="product-card">
+          <h3>{{ product.title }}</h3>
+          <div class="product">
+            <a routerLink="/products">
+              <img [src]="product.image" [alt]="product.name">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Shopify. All rights reserved.</p>
+  </div>
+</footer>

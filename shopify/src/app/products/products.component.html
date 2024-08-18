@@ -1,0 +1,45 @@
+
+<div class="product-page">
+<div class="filter-container">
+    <h3>Filter by:</h3>
+    <div>
+        <input type="radio" id="all" name="filter" value="all" (change)="onFilterChange($event)" checked>
+        <label for="all">All</label>
+    </div>
+    <div>
+        
+        <input type="radio" id="category" name="filter" value="category" (change)="onFilterChange($event)">
+        <label for="category">Category</label>
+    </div>
+    <div>
+        <input type="radio" id="price" name="filter" value="price" (change)="onFilterChange($event)">
+        <label for="price">Price</label>
+    </div>
+    <div>
+      
+        <input type="radio" id="brand" name="filter" value="brand" (change)="onFilterChange($event)">
+        <label for="brand">Brand</label>
+    </div>
+    <div>
+        <input type="radio" id="rating" name="filter" value="rating" (change)="onFilterChange($event)">
+        <label for="rating">Rating</label>
+    </div>
+    
+</div>
+
+    <div class="product-list">
+        <div class="product-card" *ngFor="let product of products">
+            <a [routerLink]="['/addcard']"
+                [queryParams]="{ name: product.title, image: product.image, price: (product.price * 75).toString(), rate: product.rating.rate.toString() }">
+                <div class="product-images">
+                    <img [src]="product.image" alt="{{ product.title }}">
+                </div>
+                <h3>{{ product.title }}</h3>
+            </a>
+            <p>{{ product.category }}</p>
+            <p class="price">{{ product.price * 75 | currency: 'INR' }}</p>
+            <p *ngIf="product.rating">Rating: {{ product.rating.rate }}</p>
+        </div>
+    </div>
+
+</div>
