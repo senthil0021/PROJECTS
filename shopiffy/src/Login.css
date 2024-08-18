@@ -12,8 +12,8 @@ html, body {
   justify-content: center;
   align-items: center; /* Center horizontally */
   max-width: 400px;
-  max-height: 800px;
-  height: 30%;
+  max-height: 400px;
+  
   margin: auto;
   border: 1px solid #bdbdbd; 
   border-radius: 8px;
@@ -24,7 +24,7 @@ html, body {
   transform: translate(-50%, -50%); 
 }
 
-.login-container h1 {
+.login-container h2 {
   text-align: center;
   color: rgb(48, 46, 46);
 }
@@ -60,4 +60,23 @@ html, body {
   color: white;
   padding: 10px;
   border-radius: 4px;
+}
+.signup-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup-link p {
+  font-size: 1em;
+  color: #333;
+}
+
+.signup-link a {
+  color: #232F3E; /* Match the button color or your primary color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  color: #e68a00; /* Hover color */
 }

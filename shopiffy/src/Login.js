@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Import Link from react-router-dom
 import authService from './authservice';
 import './Login.css';
 
@@ -25,37 +25,38 @@ const Login = () => {
     }
   };
 
-  
-
   return (
     <div className="login-form">
-    <div className="login-container">
-      <form onSubmit={handleSubmit}>
-        <b><h2>LOGIN</h2></b>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">
-          Login
-        </button>
-      </form>
-      {snackbarOpen && (
-        <div className="snackbar">
-          {snackbarMessage}
+      <div className="login-container">
+        <form onSubmit={handleSubmit}>
+          <b><h2>LOGIN</h2></b>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">
+            Login
+          </button>
+        </form>
+        {snackbarOpen && (
+          <div className="snackbar">
+            {snackbarMessage}
+          </div>
+        )}
+        <div className="signup-link">
+          <p>New user? <Link to="/signup">Sign up here</Link></p>
         </div>
-      )}
-    </div>
+      </div>
     </div>
   );
 };

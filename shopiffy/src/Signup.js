@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import authService from './authservice';
 import './Signup.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -8,6 +10,7 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const navigate=useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,6 +26,7 @@ const Signup = () => {
     } catch (error) {
       setSnackbarMessage('Registration failed');
       setSnackbarOpen(true);
+      navigate('/login')
     }
   };
 
@@ -33,7 +37,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <form onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
+        <h2><i>Sign Up</i></h2>
         <input
           type="email"
           placeholder="Email"
