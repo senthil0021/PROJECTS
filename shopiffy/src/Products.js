@@ -1,6 +1,6 @@
-// src/Products.js
+// Products.js
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation for receiving search query
 import authService from './authservice';
 import './Products.css'
 
@@ -8,20 +8,29 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filter, setFilter] = useState('all');
-  const navigate = useNavigate(); // Hook to programmatically navigate
+  const navigate = useNavigate();
+  const location = useLocation(); // Get search query from location
+  const searchQuery = location.state?.searchQuery?.toLowerCase() || ''; // Convert to lowercase for case-insensitive search
 
   useEffect(() => {
     authService.getProducts()
       .then(data => {
         setProducts(data);
-        setFilteredProducts(data);
+        if (searchQuery) {
+          const filtered = data.filter(product => 
+            product.title.toLowerCase().includes(searchQuery)
+          );
+          setFilteredProducts(filtered);
+        } else {
+          setFilteredProducts(data);
+        }
       })
       .catch(err => console.error("Error in fetching the data", err));
-  }, []);
+  }, [searchQuery]); // Include searchQuery in dependency array
 
-  const onFilterChange = (event) => {
-    setFilter(event.target.value);
-    applyFilter(event.target.value);
+  const onFilterChange = (selectedFilter) => {
+    setFilter(selectedFilter);
+    applyFilter(selectedFilter);
   };
 
   const applyFilter = (filter) => {
@@ -48,21 +57,18 @@ const Products = () => {
   };
 
   const handleNavigateToAddCard = (product) => {
-    navigate('/AddCard', { state: { product } }); // Navigate with state
+    navigate('/AddCard', { state: { product } });
   };
 
   return (
     <div className="products-container">
-      <h2>Products</h2>
       <div className="filter-container">
-        <label htmlFor="filter">Filter by:</label>
-        <select id="filter" value={filter} onChange={onFilterChange}>
-          <option value="all">All</option>
-          <option value="price">Price</option>
-          <option value="category">Category</option>
-          <option value="rating">Rating</option>
-          <option value="brand">Brand</option>
-        </select>
+        <div className="filter-buttons">
+          <button className={`filter-button ${filter === 'all' ? 'active' : ''}`} onClick={() => onFilterChange('all')}>All</button>
+          <button className={`filter-button ${filter === 'price' ? 'active' : ''}`} onClick={() => onFilterChange('price')}>Price</button>
+          <button className={`filter-button ${filter === 'category' ? 'active' : ''}`} onClick={() => onFilterChange('category')}>Category</button>
+          <button className={`filter-button ${filter === 'rating' ? 'active' : ''}`} onClick={() => onFilterChange('rating')}>Rating</button>
+        </div>
       </div>
       <div className="product-list">
         {filteredProducts.length > 0 ? (

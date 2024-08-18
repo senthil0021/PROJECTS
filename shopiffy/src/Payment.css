@@ -1,0 +1,70 @@
+
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fpayment-background&psig=AOvVaw1xJGCMGdYw03G0Sgoz4jMh&ust=1724077856148000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjy8d3g_ocDFQAAAAAdAAAAABAR');
+    background-size: cover;
+    background-position: center;
+    color:black;
+    text-align: center;
+  }
+  
+  .payment-details {
+    background: rgba(247, 245, 245, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+  }
+  .payment-details h1{
+    color: #ff9800;
+  }
+  
+  .product-summary h2,
+  .product-summary h3 {
+    margin: 10px 0;
+  }
+  
+  .product-summary .price {
+    color: #ff9800;
+    font-weight: bold;
+  }
+  
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    margin-right: 20px;
+    color:black;
+  }
+  
+  .cta-btn {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .cta-btn:hover {
+    background-color: #e58900;
+  }
+  

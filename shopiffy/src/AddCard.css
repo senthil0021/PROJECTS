@@ -5,7 +5,8 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #b4baba;
+    background-color:lightgrey;
+    
   }
   
   .add-card-container {
@@ -13,7 +14,7 @@ body, html {
     width: 80%;
     height: 80vh;
     margin: 10vh auto;
-    background-color: #ffffff;
+    background-color:rgba(29, 29, 49, 0.937);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;

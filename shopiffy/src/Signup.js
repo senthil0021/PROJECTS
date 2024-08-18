@@ -32,9 +32,8 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-     
       <form onSubmit={handleSubmit}>
-          <b><h2>Sign Up</h2></b> 
+        <h2>Sign Up</h2>
         <input
           type="email"
           placeholder="Email"
@@ -56,12 +55,10 @@ const Signup = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <button type="submit">
-          Sign Up
-        </button>
+        <button type="submit">Sign Up</button>
       </form>
       {snackbarOpen && (
-        <div className="snackbar">
+        <div className="snackbar" onAnimationEnd={handleSnackbarClose}>
           {snackbarMessage}
         </div>
       )}

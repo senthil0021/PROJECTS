@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from './authservice';
-import { TextField, Button, Snackbar } from '@mui/material';
 import './Login.css';
 
 const Login = () => {
@@ -26,45 +25,37 @@ const Login = () => {
     }
   };
 
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
-  };
+  
 
   return (
+    <div className="login-form">
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div className="input-container">
-          <TextField
-            label="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            fullWidth
-            
-            InputProps={{ className: 'input' }}
-          />
-          <TextField
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            fullWidth
-            InputProps={{ className: 'input' }}
-          />
-        </div>
-        <Button type="submit" variant="contained" color="primary" fullWidth>
+        <b><h2>LOGIN</h2></b>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">
           Login
-        </Button>
+        </button>
       </form>
-      <Snackbar
-        open={snackbarOpen}
-        message={snackbarMessage}
-        autoHideDuration={3000}
-        onClose={handleSnackbarClose}
-      />
+      {snackbarOpen && (
+        <div className="snackbar">
+          {snackbarMessage}
+        </div>
+      )}
+    </div>
     </div>
   );
 };

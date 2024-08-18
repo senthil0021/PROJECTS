@@ -8,12 +8,13 @@ import Products from './Products';
 import AddCard from './Addcard';
 import Payment from './Payment';
 import ProtectedRoute from './ProtectedRoute';
-import Header from './Header'; // Import Header
+import Header from './Header'; 
+
 
 const App = () => {
   return (
     <Router>
-      <Header /> {/* Include Header here */}
+      <Header />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
