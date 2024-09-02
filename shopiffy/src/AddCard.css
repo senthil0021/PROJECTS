@@ -5,7 +5,8 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #b4baba;
+    background-color:lightgrey;
+    
   }
   
   .add-card-container {
@@ -13,7 +14,7 @@ body, html {
     width: 80%;
     height: 80vh;
     margin: 10vh auto;
-    background-color: #ffffff;
+    background-color:rgba(29, 29, 49, 0.937);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -44,19 +45,19 @@ body, html {
   
   .add-card-content h2 {
     font-size: 2rem;
-    color: #0F1111;
+    color:#FF9900;
     margin-bottom: 1rem;
   }
   
   .add-card-content p {
     font-size: 1rem;
-    color: #565959;
+    color: white;
     margin-bottom: 0.5rem;
   }
   
   .add-card-content h5 {
     font-size: 1.2rem;
-    color: #0F1111;
+    color: white;
     margin: 1rem 0;
   }
   
@@ -64,6 +65,7 @@ body, html {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    color:white;
   }
   
   .quantity-selector button {

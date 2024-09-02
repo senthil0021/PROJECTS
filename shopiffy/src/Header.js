@@ -6,6 +6,7 @@ import './Header.css'
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(''); // New state for search query
   const navigate = useNavigate(); 
 
   useEffect(() => {
@@ -14,12 +15,11 @@ const Header = () => {
 
   const onSearch = () => {
     if (isAuthenticated) {
-      navigate('/products'); 
+      navigate('/products', { state: { searchQuery } }); // Pass searchQuery to Products page
     } else {
       alert('You need to be logged in to search products.');
     }
   };
-
   const logout = () => {
     authService.logout();
     navigate('/'); 
@@ -28,7 +28,14 @@ const Header = () => {
   return (
     <nav>
       <div className="search-container">
-        <input type="text" id="search-input" placeholder="Search" onClick={onSearch} />
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search" 
+          value={searchQuery} 
+          onChange={(e) => setSearchQuery(e.target.value)} // Update search query state
+          onKeyPress={(e) => e.key === 'Enter' && onSearch()} // Trigger search on Enter key
+        />
       </div>
       <div className="app-name">Shopify</div>
       <ul className="nav-links">
@@ -43,3 +50,4 @@ const Header = () => {
 };
 
 export default Header;
+

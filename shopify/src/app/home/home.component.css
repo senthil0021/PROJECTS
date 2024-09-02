@@ -113,11 +113,11 @@ main {
 }
 
 .product-card .price {
-  color: #ff9900; /* Shopify orange */
+  color: #ff9900; 
   font-weight: bold;
 }
 footer {
-  background-color: #232F3E; /* Match with the navigation bar or header color */
+  background-color: #232F3E; 
   color: white;
   text-align: center;
   padding: 20px;

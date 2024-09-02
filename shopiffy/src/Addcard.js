@@ -1,15 +1,21 @@
 // AddCard.js
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './AddCard.css';
 
 const AddCard = () => {
   const { state } = useLocation();
   const { product } = state || {};
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   const incrementQuantity = () => setQuantity(quantity + 1);
   const decrementQuantity = () => quantity > 1 && setQuantity(quantity - 1);
+
+  const handleAddToCart = () => {
+
+    navigate('/payment', { state: { product, quantity } });
+  };
 
   return (
     <div className="add-card-container">
@@ -25,7 +31,7 @@ const AddCard = () => {
           <span>{quantity}</span>
           <button onClick={incrementQuantity}>+</button>
         </div>
-        <button className="cta-btn">Add to Cart</button>
+        <button className="cta-btn" onClick={handleAddToCart}>Add to Cart</button>
       </div>
     </div>
   );
