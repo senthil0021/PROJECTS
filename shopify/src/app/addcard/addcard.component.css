@@ -8,8 +8,8 @@ body {
   box-sizing: border-box;
 }
 
-/* Hero Section */
-.hero {
+/* primary Section */
+.primary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,20 +21,20 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.hero-content {
+.primary-content {
   max-width: 50%;
   color: #333; /* Ensure text is readable */
   text-align: left; /* Align text to the left for larger screens */
 }
 
-.hero-content h2 {
+.primary-content h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
   font-weight: bold;
   color: #2E3A59; /* Dark blue color for emphasis */
 }
 
-.hero-content h5 {
+.primary-content h5 {
   font-size: 1.5em;
   margin-bottom: 20px;
   color: #4A4A4A; /* Dark gray for secondary text */
@@ -55,7 +55,7 @@ body {
   background-color: #1F2A40; /* Even darker blue for hover effect */
 }
 
-.hero-image img {
+.primary-image img {
   max-width: 60%;
   height: auto;
   border-radius: 8px;
@@ -115,12 +115,12 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero {
+  .primary {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-content {
+  .primary-content {
     max-width: 100%;
     margin-bottom: 20px;
   }

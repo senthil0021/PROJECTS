@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <main>
-      <section className="hero">
+      <section className="primary">
         <div className="container">
           <h1>Welcome to Shopify</h1>
           <p>Your ultimate destination for amazing products.</p>

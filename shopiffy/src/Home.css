@@ -16,8 +16,8 @@ main {
   margin: 0 auto;
 }
 
-/* Hero Section */
-.hero {
+/* primary Section */
+.primary {
   background-color: #FF9900;
   color: white;
   text-align: center;
@@ -25,12 +25,12 @@ main {
   margin-bottom: 40px;
 }
 
-.hero h1 {
+.primary h1 {
   font-size: 3em;
   margin-bottom: 20px;
 }
 
-.hero p {
+.primary p {
   font-size: 1.2em;
   margin-bottom: 40px;
 }

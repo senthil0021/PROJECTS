@@ -18,19 +18,19 @@ main {
   margin: 0 auto;
 }
 
-.hero {
+.primary {
   background-color: #FF9900; /* Shopify orange */
   color: white;
   text-align: center;
   padding: 80px 0;
 }
 
-.hero h1 {
+.primary h1 {
   font-size: 3em;
   margin-bottom: 20px;
 }
 
-.hero p {
+.primary p {
   font-size: 1.2em;
   margin-bottom: 40px;
 }
